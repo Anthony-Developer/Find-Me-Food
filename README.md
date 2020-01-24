@@ -73,16 +73,12 @@
 - Display Business information  
 - Dislpay reviews for business
 
-#### MVP EXAMPLE:
+#### Post-MVP
 
 - Give the user and option to search for restaurants or get recipes to make at home 
 - Implement a map feature to give users the location on a map of the businesses  
 - Link a section to current food news 
 - Allow users to save favorite restaurants
-
-### Post-MVP
-
-List any additional functionality you would like to implement once MVP has been reached.
 
 ## React Component Hierarchy
 

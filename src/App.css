@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +9,39 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.header-container {
+  background-color: black;
+  margin: 0;
+}
+
+.header-elements {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-title {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.nav-links {
+  color: white;
+}
+
+.links {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

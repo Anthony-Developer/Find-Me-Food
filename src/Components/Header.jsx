@@ -4,12 +4,14 @@ import Nav from './Nav'
 
 function Header() {
     return (
-      <div>
+      <div className="header-container">
 
-        <h1> Header Component </h1>
+        <h1 className="header-title"> Find me Food! </h1>
         
-        <Search />
-        <Nav />
+        <div className="header-elements">
+            <Search />
+            <Nav />
+        </div>
 
       </div>
     )

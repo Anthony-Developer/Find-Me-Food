@@ -1,9 +1,17 @@
 import React from 'react'
+//import { Route, NavLink } from 'react-router-dom'
 
 function Nav() {
     return (
-      <div>
-        <h1> Nav Component </h1>
+      <div className="nav-links">
+        
+        <nav >
+          <a className="links" href="#"> Home </a>
+          <a className="links" href="#"> Restaurants </a>
+          <a className="links" href="#"> Recipes </a>
+          <a className="links" href="#"> News </a>
+        </nav>
+
       </div>
     )
   }

@@ -139,6 +139,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 Use this section to list all supporting libraries and thier role in the project. React Router Dom and Axios should be listed here at the very least.
 
+- Axios
+- Dotenv
+- React-router-dom
+
 ## Issues and Resolutions
 
 Use this section to list of all major issues you anticipate encountering during development and how you plan to tackle them. Be sure to update this section during development, documenting the actual resolutions you inacted, as well as any other unexpected obstacles you encountered along the way.

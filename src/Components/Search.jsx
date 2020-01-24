@@ -3,7 +3,12 @@ import React from 'react'
 function Search() {
     return (
       <div>
-        <h1> Search Component </h1>
+
+        <form action="">
+          <input type="text" placeholder='  Search' />
+          <button> Search </button>
+      </form>
+
       </div>
     )
   }

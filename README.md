@@ -128,7 +128,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 24th| Project Pitch / Project Approval | Incomplete
+|Jan 24th| Project Pitch / Project Approval | Complete
 |Jan 27th| Basic Structure with Working Logic and API Results | Incomplete
 |Jan 28th| Get All Components To Render Their Specified Data | Incomplete
 |Jan 29th| Styling the Site  | Incomplete

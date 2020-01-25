@@ -6,7 +6,6 @@ import Footer from './Components/Footer'
 //import { BrowserRouter as Router } from 'react-router-dom'
 //import { Route } from 'react-router-dom'
 
-console.log(process.env.REACT_APP_YELP_KEY)
 
 function App() {
   

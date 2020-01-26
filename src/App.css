@@ -38,6 +38,19 @@ body {
   text-decoration: none;
 }
 
+.results-img {
+  max-width: 80%;
+}
+
+.results-to-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.individual-results-div {
+  max-width: 20%;
+}
+
 .footer {
   background-color: black;
   color: white;

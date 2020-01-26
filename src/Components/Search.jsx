@@ -1,13 +1,15 @@
 import React from 'react'
 
-function Search() {
-    return (
-      <div>
+function Search(props) {
+  //console.log(props)
 
-        <form action="">
-          <input type="text" placeholder='  Search' />
-          <button> Search </button>
-      </form>
+    return (
+      <div className="search-component">
+
+        <form action="" className="search-form-div">
+          <input type="text" placeholder=' Search for Food' onChange={props.search} value={props.searchInput} />
+          <button onClick={props.click}> Search </button>
+        </form>
 
       </div>
     )

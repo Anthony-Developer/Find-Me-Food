@@ -1,10 +1,13 @@
 import React from 'react'
-import Reviews from './Reviews'
-import BusinessDetails from './BusinessDetails'
+//import Reviews from './Reviews'
+//import BusinessDetails from './BusinessDetails'
 
 function Results(props) {
-  const results = (props.searchedRes.data && props.searchedRes.data.businesses)
+  //console.log(props)
+  const results = (props.searchedRes && props.searchedRes)
   let resultsToDisplay
+  //console.log(results)
+  //console.log(results.data && results.data.businesses)
 
   if (results !== undefined) {
     resultsToDisplay = results.map((item) => {
@@ -33,8 +36,8 @@ function Results(props) {
           {resultsToDisplay}
         </div>
 
-        <BusinessDetails />
-        <Reviews />
+        {/* <BusinessDetails />
+        <Reviews /> */}
 
       </div>
     )

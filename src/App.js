@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Main from './Components/Main'
@@ -12,9 +12,7 @@ function App() {
   const [userSearched, setUserSearched] = useState('nyc')
   const [yelpResults, setYelpResults] = useState([])
   
-
-  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userSearched}`
-  //const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/autocomplete`
+  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&term=${userSearched}`
 
   const handleChange = (e) => {
     let value = e.target.value;
@@ -28,28 +26,14 @@ function App() {
           yelpAPI,
           config
       ) 
-    setYelpResults(response)
+    setYelpResults(response.data.businesses)
   }
-
-  const initialResults = async () => {
-    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } };
-
-    let res = await axios.get(
-        yelpAPI,
-        config
-    )
-    setYelpResults(res)
-  }
-
-  // useEffect(() => {
-  //   initialResults()
-  // }, [])
 
   return (
     <div className="App">
 
       <Header textInput={handleChange} buttonClick={handleClick}/>
-      <Main results={yelpResults} />
+      <Main results={yelpResults} changeResults={setYelpResults}/>
       <Footer />
       
     </div>

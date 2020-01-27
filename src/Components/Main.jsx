@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Results from './Results'
 //import News from './News'
 //import axios from 'axios'

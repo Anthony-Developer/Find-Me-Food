@@ -29,7 +29,19 @@ function App() {
     setYelpResults(response)
   }
 
-  //console.log(yelpResults)
+  const initialResults = async () => {
+    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } };
+
+    let res = await axios.get(
+        yelpAPI,
+        config
+    )
+    setYelpResults(res)
+  }
+
+  useEffect(() => {
+    initialResults()
+  }, [])
 
   return (
     <div className="App">

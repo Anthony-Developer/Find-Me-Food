@@ -5,7 +5,6 @@ import BusinessDetails from './BusinessDetails'
 function Results(props) {
   const results = (props.searchedRes.data && props.searchedRes.data.businesses)
   let resultsToDisplay
-  console.log(results)
 
   if (results !== undefined) {
     resultsToDisplay = results.map((item) => {
@@ -30,7 +29,6 @@ function Results(props) {
     return (
       <div className="results-div">
 
-        {/* <h1> Results Component </h1> */}
         <div className="results-to-display">
           {resultsToDisplay}
         </div>

@@ -11,8 +11,10 @@ import axios from 'axios'
 function App() {
   const [userSearched, setUserSearched] = useState('nyc')
   const [yelpResults, setYelpResults] = useState([])
+  
 
   const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${userSearched}`
+  //const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/autocomplete`
 
   const handleChange = (e) => {
     let value = e.target.value;
@@ -39,15 +41,15 @@ function App() {
     setYelpResults(res)
   }
 
-  useEffect(() => {
-    initialResults()
-  }, [])
+  // useEffect(() => {
+  //   initialResults()
+  // }, [])
 
   return (
     <div className="App">
 
       <Header textInput={handleChange} buttonClick={handleClick}/>
-      <Main results={yelpResults}/>
+      <Main results={yelpResults} />
       <Footer />
       
     </div>

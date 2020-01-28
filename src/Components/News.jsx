@@ -40,7 +40,7 @@ function News() {
     return (
       <div className="news-div">
 
-        <h1 className="news-title"> Recent News </h1>
+        <h1 className="component-title"> Recent News </h1>
 
         {resultsToDisplay}
 

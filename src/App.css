@@ -93,8 +93,28 @@ body {
   text-decoration: none;
 }
 
+.recipes-individual-divs {
+  max-width: 18%;
+  margin: 10px;
+}
+
+.recipes-img {
+  max-width: 80%;
+}
+
+.recipes-div {
+  justify-content: center;
+}
+
+
 .results-img {
   max-width: 80%;
+}
+
+.recipes-to-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .results-to-display {

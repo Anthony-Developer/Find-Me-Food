@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Main from './Components/Main'
+import Recipes from './Components/Recipes'
 import News from './Components/News'
 import Footer from './Components/Footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -9,7 +10,7 @@ import axios from 'axios'
 
 
 function App() {
-  const [userSearched, setUserSearched] = useState('nyc')
+  const [userSearched, setUserSearched] = useState('pizza')
   const [yelpResults, setYelpResults] = useState([])
   
   const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${userSearched}`
@@ -44,6 +45,11 @@ function App() {
           <Route 
             path='/news' 
             component={() => <News />} 
+          />
+
+          <Route 
+            path='/recipes' 
+            component={() => <Recipes name={userSearched} />} 
           />
         
         <Footer />

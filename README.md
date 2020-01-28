@@ -8,6 +8,8 @@
 ## API and Data Sample
 
 - [Yelp API](https://www.yelp.com/developers/documentation/v3/get_started)
+- [News API](https://newsapi.org/)
+- [Edamam API](https://www.edamam.com/)
 
 ## API Snippet
 

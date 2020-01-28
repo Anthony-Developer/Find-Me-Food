@@ -10,19 +10,24 @@ import axios from 'axios'
 
 
 function App() {
-  const [userSearched, setUserSearched] = useState('pizza')
+  const [userSearched, setUserSearched] = useState('')
   const [yelpResults, setYelpResults] = useState([])
+  let value = ''
   
   const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${userSearched}`
 
   const handleChange = (e) => {
-    let value = e.target.value;
-    setUserSearched(value)
+    value = e.target.value
+    //console.log(value)
   }
+
+  console.log(value)
+  console.log(userSearched)
 
   const handleClick = async (e) => {
     e.preventDefault()
-    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } };
+    setUserSearched(value)
+    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
     let response = await axios.get(
           yelpAPI,
           config
@@ -30,7 +35,10 @@ function App() {
     setYelpResults(response.data.businesses)
   }
 
+  console.log(userSearched)
+
   return (
+    
     <Router>
       <div className="App">
 
@@ -48,6 +56,7 @@ function App() {
           />
 
           <Route 
+            exact
             path='/recipes' 
             component={() => <Recipes name={userSearched} />} 
           />
@@ -57,18 +66,7 @@ function App() {
       </div>
     </Router>
       
-   
-  )
+   )
 }
 
 export default App
-
-
-
-{/* <div className="App">
-
-<Header textInput={handleChange} buttonClick={handleClick}/>
-<Main results={yelpResults} changeResults={setYelpResults}/>
-<Footer />
-
-</div> */}

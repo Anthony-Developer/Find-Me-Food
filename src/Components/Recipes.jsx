@@ -2,24 +2,23 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function Recipes(props) {
-    console.log(props.name)
     const [currentRecipes, setCurrentRecipes] = useState([])
+    const recipeName = props.name
 
-    const recipesAPI = `https://api.edamam.com/search?q=${props.name}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
+    const recipesAPI = `https://api.edamam.com/search?q=${recipeName}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
 
     const newsResults = async () => {
         let res = await axios.get(
           recipesAPI
         )
-        //console.log(res.data)
         setCurrentRecipes(res.data.hits)
       }
 
       useEffect(() => {
           newsResults()
-      }, [])
+      }, [recipeName])
 
-      console.log(currentRecipes)
+      console.log(recipeName)
 
       const resultsToDisplay = currentRecipes.map((item) => {
           

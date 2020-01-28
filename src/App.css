@@ -25,6 +25,10 @@ body {
   display: block;
 }
 
+.component-title {
+  text-decoration: underline;
+}
+
 .footer {
   background-color: #E6E6E6;
   color: black;

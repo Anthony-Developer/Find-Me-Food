@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function Nav() {
     return (
-      <Router>
+      
+      // <Router>
         <div className="nav-links">
         
           <nav >
@@ -14,7 +15,7 @@ function Nav() {
           </nav>
 
         </div>
-      </Router>
+      // </Router>
     )
   }
   

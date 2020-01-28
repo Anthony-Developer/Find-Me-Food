@@ -27,7 +27,7 @@ function News() {
           <img src={item.urlToImage} className="news-img"/>
           <p> {item.description} </p>
           <br />
-          <a href={item.url} className="news-links"> Link to article</a>
+          <a href={item.url} alt='' className="news-links"> Link to article</a>
           <br />
           <hr className="news-hr" />
           <br />
@@ -35,7 +35,7 @@ function News() {
       )
   })
 
-  console.log(currentNews)
+  //console.log(currentNews)
 
     return (
       <div className="news-div">

@@ -9,7 +9,6 @@ function Main(props) {
 
     const yelpResults = (props.results)
     const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=`
-    //const yelpAPI = `https://cors-proxy.htmldriven.com/?url=https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=`
 
     const handleClick = async (e) => {
         e.preventDefault()
@@ -31,9 +30,9 @@ function Main(props) {
     props.changeResults(res.data.businesses)
     }
 
-    useEffect(() => {
-        initialResults()
-    }, [])
+    // useEffect(() => {
+    //     initialResults()
+    // }, [])
 
     //console.log(props)
 

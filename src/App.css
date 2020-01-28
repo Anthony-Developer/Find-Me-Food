@@ -63,15 +63,34 @@ body {
 }
 
 .main-div-buttons {
-  /* display: block; */
-  /* justify-items: center; */
-  /* background-color: #CCCCCC; */
   width: 140px;
   height: 100%;
 }
 
 .nav-links {
   color: black;
+}
+
+.news-div {
+  align-content: center;
+  margin: auto;
+}
+
+.news-hr {
+  max-width: 85%;
+}
+
+.news-img {
+  max-width: 80%;
+}
+
+.news-individual-divs {
+  max-width: 80%;
+  margin: auto;
+}
+
+.news-links {
+  text-decoration: none;
 }
 
 .results-img {

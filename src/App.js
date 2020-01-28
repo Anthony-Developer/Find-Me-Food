@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Main from './Components/Main'
+import News from './Components/News'
 import Footer from './Components/Footer'
-//import { BrowserRouter as Router } from 'react-router-dom'
-//import { Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -30,14 +30,39 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
 
-      <Header textInput={handleChange} buttonClick={handleClick}/>
-      <Main results={yelpResults} changeResults={setYelpResults}/>
-      <Footer />
+        <Header textInput={handleChange} buttonClick={handleClick}/>
+        
+          <Route 
+            exact
+            path='/' 
+            component={() => <Main results={yelpResults} changeResults={setYelpResults} />} 
+          />
+
+          <Route 
+            path='/news' 
+            component={() => <News />} 
+          />
+        
+        <Footer />
+        
+      </div>
+    </Router>
       
-    </div>
+   
   )
 }
 
 export default App
+
+
+
+{/* <div className="App">
+
+<Header textInput={handleChange} buttonClick={handleClick}/>
+<Main results={yelpResults} changeResults={setYelpResults}/>
+<Footer />
+
+</div> */}

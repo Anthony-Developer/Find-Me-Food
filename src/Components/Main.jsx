@@ -9,6 +9,7 @@ function Main(props) {
 
     const yelpResults = (props.results)
     const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=`
+    //const yelpAPI = `https://cors-proxy.htmldriven.com/?url=https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=`
 
     const handleClick = async (e) => {
         e.preventDefault()
@@ -34,6 +35,8 @@ function Main(props) {
         initialResults()
     }, [])
 
+    //console.log(props)
+
     return (
         <div className="main-div">
 
@@ -44,9 +47,6 @@ function Main(props) {
             <div className="results-to-display">
                 <Results searchedRes={yelpResults} />   
             </div>
-
-            
-            {/* <News /> */}
 
         </div>
     )

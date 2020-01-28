@@ -17,12 +17,8 @@ body {
   text-decoration: none;
 }
 
-.buttons-div {
-  height: 100%;
-}
-
 .buttons-sidebar {
-  height: 100%;
+  background-color: #CCCCCC;
 }
 
 .categories-button {
@@ -69,7 +65,7 @@ body {
 .main-div-buttons {
   /* display: block; */
   /* justify-items: center; */
-  background-color: #CCCCCC;
+  /* background-color: #CCCCCC; */
   width: 140px;
   height: 100%;
 }

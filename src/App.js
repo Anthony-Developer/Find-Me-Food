@@ -12,7 +12,7 @@ function App() {
   const [userSearched, setUserSearched] = useState('nyc')
   const [yelpResults, setYelpResults] = useState([])
   
-  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&term=${userSearched}`
+  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${userSearched}`
 
   const handleChange = (e) => {
     let value = e.target.value;

@@ -1,78 +1,99 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Main from './Components/Main'
 import Recipes from './Components/Recipes'
 import News from './Components/News'
 import Footer from './Components/Footer'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from 'axios'
 
 
 function App() {
-  const [userSearched, setUserSearched] = useState('Pizza')
   const [yelpResults, setYelpResults] = useState([])
-  let value = ''
-  let newValue
-  
-  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${userSearched}`
+  const [receipeRes, setReseipeRes] = useState([])
+  const [userSearched, setUserSearched] = useState('')
+  const [value, setValue] = useState('pizza')
+
+  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${value}`
+  const recipesAPI = `https://api.edamam.com/search?q=${value}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
 
   // The text from the search bar
   const handleChange = (e) => {
-    value = e.target.value
-    newValue = value.charAt(0).toUpperCase() + value.slice(1)
-    //console.log(newValue)
+    let textInput = e.target.value
+    let newValue = textInput.charAt(0).toUpperCase() + textInput.slice(1)
+    setValue(newValue)
   }
 
-  console.log(`User searched this text: ${userSearched}`)
-
   // When the search button is clicked this API call will run
-  const handleClick = async (e) => {
+  const handleClick = (e) => {
     e.preventDefault()
-    setUserSearched(newValue)
-    
+    setUserSearched(value)
+    handleRequest()
+    recipeResults()
+  }
+
+  const handleRequest = async () => {
     const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
     let response = await axios.get(
-          yelpAPI,
-          config
-      ) 
+      yelpAPI,
+      config
+    )
     setYelpResults(response.data.businesses)
   }
 
-  console.log(userSearched)
+  const initialResults = async () => {
+    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
+    let res = await axios.get(
+        yelpAPI,
+        config
+    )
+    setYelpResults(res.data.businesses)
+  }
+
+  const recipeResults = async () => {
+    let res = await axios.get(
+      recipesAPI
+    )
+    setReseipeRes(res.data.hits)
+  }
+
+  useEffect(() => {
+    initialResults()
+  }, [])
 
   return (
-    
+
     <Router>
       <div className="App">
 
-        <Header textInput={handleChange} buttonClick={handleClick}/>
-        
-          <Route 
-            exact
-            path='/'>
-            <Main results={yelpResults} changeResults={setYelpResults} name={userSearched}/>
-          </Route> 
-             
+        <Header value={value} textInput={handleChange} buttonClick={handleClick} />
+
+        <Route
+          exact
+          path='/'>
+          <Main results={yelpResults} changeResults={setYelpResults} name={value} />
+        </Route>
 
 
-          <Route 
-            path='/news' 
-            component={() => <News />} 
-          />
 
-          <Route 
-            exact
-            path='/recipes' 
-            component={() => <Recipes name={userSearched} />} 
-          />
-        
+        <Route
+          path='/news'
+          component={() => <News />}
+        />
+
+        <Route
+          exact
+          path='/recipes'
+          component={() => <Recipes userSearched={userSearched} currentRecipes={receipeRes} recipeName={value} />}
+        />
+
         <Footer />
-        
+
       </div>
     </Router>
-      
-   )
+
+  )
 }
 
 export default App

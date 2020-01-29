@@ -11,7 +11,7 @@ function Nav() {
             
             <ul className="nav-links">
               <Link to='/' >
-                <li classname="nav-links-individual"> Home </li>
+                <li className="nav-links-individual"> Home </li>
               </Link>
               
               <Link to='/recipes'>

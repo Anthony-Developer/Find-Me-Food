@@ -1,10 +1,6 @@
 import React from 'react'
-//import Reviews from './Reviews'
-//import BusinessDetails from './BusinessDetails'
 
 function Results(props) {
-  console.log(`Results from Results.js: `)
-  console.log(props.userSearched)
 
   // Results being passed down from Main.js originally form App.js
   const results = (props.yelpResults && props.yelpResults)

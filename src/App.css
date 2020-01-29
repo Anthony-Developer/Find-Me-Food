@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
 }
 
 nav {
@@ -24,11 +25,7 @@ nav {
 }
 
 .buttons-sidebar {
-  background-color: #CCCCCC;
-}
-
-.categories-button {
-  display: block;
+  background-color: #E6E6E6;
 }
 
 .component-title {
@@ -36,13 +33,13 @@ nav {
 }
 
 .footer {
-  background-color: #E6E6E6;
+  background-color:  #CCCCCC;
   color: black;
   padding: 15px;
 }
 
 .header-container {
-  background-color: #E6E6E6;
+  background-color: #CCCCCC;
   margin: 0;
 }
 
@@ -53,7 +50,7 @@ nav {
 }
 
 .header-title {
-  background-color: #E6E6E6;
+  background-color: #CCCCCC;
   color: black;
   padding: 10px;
   margin: 0;
@@ -61,6 +58,7 @@ nav {
 
 .individual-results-div {
   max-width: 20%;
+  background-color: white;
 }
 
 .links {
@@ -74,8 +72,9 @@ nav {
 }
 
 .main-div-buttons {
-  width: 140px;
+  width: 130px;
   height: 100%;
+  margin: auto;
 }
 
 .nav-div {
@@ -150,6 +149,38 @@ nav {
 
 .search-form-div {
   padding-left: 15px;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.search-box {
+  width: 100%;
+  border: 1px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search-button {
+  width: 80px;
+  height: 32px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.suggestions-button {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
 }
 
 

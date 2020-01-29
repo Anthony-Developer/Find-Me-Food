@@ -13,7 +13,9 @@ function App() {
   const [yelpResults, setYelpResults] = useState([])
   const [receipeRes, setReseipeRes] = useState([])
   const [userSearched, setUserSearched] = useState('')
-  const [value, setValue] = useState('pizza')
+  const [userLocation, setUserLocation] = useState('')
+  const [locationValue, setLocationValue] = useState('Nyc')
+  const [value, setValue] = useState('Pizza')
 
   const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${value}`
   const recipesAPI = `https://api.edamam.com/search?q=${value}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
@@ -25,6 +27,10 @@ function App() {
     setValue(newValue)
   }
 
+  const handleLocationChange = (e) => {
+    setLocationValue(e.target.value)
+  }
+
   // When the search button is clicked this API call will run
   const handleClick = (e) => {
     e.preventDefault()
@@ -32,6 +38,13 @@ function App() {
     handleRequest()
     recipeResults()
   }
+
+  const handleLocationClick = (e) => {
+    e.preventDefault()
+    setUserLocation(locationValue)
+  }
+
+  console.log(userLocation)
 
   const handleRequest = async () => {
     const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
@@ -42,15 +55,6 @@ function App() {
     setYelpResults(response.data.businesses)
   }
 
-  const initialResults = async () => {
-    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
-    let res = await axios.get(
-        yelpAPI,
-        config
-    )
-    setYelpResults(res.data.businesses)
-  }
-
   const recipeResults = async () => {
     let res = await axios.get(
       recipesAPI
@@ -59,7 +63,8 @@ function App() {
   }
 
   useEffect(() => {
-    initialResults()
+    handleRequest()
+    // recipeResults()
   }, [])
 
   return (
@@ -67,7 +72,7 @@ function App() {
     <Router>
       <div className="App">
 
-        <Header value={value} textInput={handleChange} buttonClick={handleClick} />
+        <Header value={value} textInput={handleChange} location={handleLocationChange} buttonClick={handleClick} buttonLocationClick={handleLocationClick}/>
 
         <Route
           exact

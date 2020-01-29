@@ -6,10 +6,14 @@ import axios from 'axios'
 import ButtonSidebar from './ButtonSidebar';
 
 function Main(props) {
+    //console.log(props.name)
 
+    // Results for the API call passed down from App.js
     const yelpResults = (props.results)
-    const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=`
+    console.log('yelp results', yelpResults)
+    const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=$`
 
+    // The function for when my sidebar buttoins are clicked it'll render the category wthin my button
     const handleClick = async (e) => {
         e.preventDefault()
         const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
@@ -20,21 +24,23 @@ function Main(props) {
         props.changeResults(response.data.businesses)
     }
 
-
+    // The initial results to render to display once the app is opened
     const initialResults = async () => {
     const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
     let res = await axios.get(
-        `${yelpAPI}burger`,
+        `${yelpAPI}italian`,
         config
     )
     props.changeResults(res.data.businesses)
     }
 
-    // useEffect(() => {
-    //     initialResults()
-    // }, [])
+    // Runs the first time the page is loaded
+    useEffect(() => {
+        initialResults()
+    }, [])
 
-    //console.log(props)
+    console.log(`Results from Main.js: `)
+    console.log(props.name)
 
     return (
         <div className="main-div">
@@ -44,7 +50,7 @@ function Main(props) {
             </div>
 
             <div className="results-to-display">
-                <Results searchedRes={yelpResults} />   
+                <Results yelpResults={yelpResults}  userSearched={props.name}/>   
             </div>
 
         </div>

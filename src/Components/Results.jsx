@@ -3,15 +3,18 @@ import React from 'react'
 //import BusinessDetails from './BusinessDetails'
 
 function Results(props) {
-  //console.log(props)
-  const results = (props.searchedRes && props.searchedRes)
+  console.log(`Results from Results.js: `)
+  console.log(props.userSearched)
+
+  // Results being passed down from Main.js originally form App.js
+  const results = (props.yelpResults && props.yelpResults)
   let resultsToDisplay
 
+  // Displaying the results being passed down 
   if (results !== undefined) {
     resultsToDisplay = results.map((item) => {
       
-
-      return (
+        return (
 
           <div className="individual-results-div" key={ item.id }> 
               <a href={ item.url } className="business-url"><h3> { item.name } </h3></a> 

@@ -7,7 +7,7 @@ function Recipes(props) {
 
     const recipesAPI = `https://api.edamam.com/search?q=${recipeName}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
 
-    const newsResults = async () => {
+    const recipeResults = async () => {
         let res = await axios.get(
           recipesAPI
         )
@@ -15,7 +15,7 @@ function Recipes(props) {
       }
 
       useEffect(() => {
-          newsResults()
+          recipeResults()
       }, [recipeName])
 
       console.log(recipeName)

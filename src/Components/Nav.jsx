@@ -1,21 +1,32 @@
 import React from 'react'
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Nav() {
     return (
       
-      // <Router>
-        <div className="nav-links">
+      
+        <div className="nav-div">
         
           <nav >
-            <a className="links" href="#"> Home </a>
-            <a className="links" href="#"> Restaurants </a>
-            <a className="links" href="#"> Recipes </a>
-            <a className="links" href="#"> News </a>
+            
+            <ul className="nav-links">
+              <Link to='/' >
+                <li classname="nav-links-individual"> Home </li>
+              </Link>
+              
+              <Link to='/recipes'>
+                <li> Recipes </li>
+              </Link>
+              
+              <Link to='/news'>
+                <li> News </li>
+              </Link>
+            </ul>
+            
           </nav>
 
         </div>
-      // </Router>
+    
     )
   }
   

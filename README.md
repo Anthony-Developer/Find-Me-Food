@@ -116,11 +116,11 @@ Timeframes are key in the development cycle. You have limited time to code and s
 | --- | :---: |  :---: | :---: | :---: |
 | Create The Structure | H | 3 hrs| 5 hrs | 0 hrs |
 | Create the Logic and Initial State | H | 6 hrs| 7 hrs | 0 hrs |
-| Interacting with APIs | H | 8 hrs| 5 hrs | 0 hrs |
-| Get Components to Render Their Data | H | 6 hrs| 3.5 hrs | 0 hrs |
-| Style the Page | H | 10 hrs| 2 hrs | 0 hrs |
-| Setting Up the News Section | H | 6 hrs| 0 hrs | 0 hrs |
-| Total | H | 39 hrs| 17 hrs | 0 hrs |
+| Interacting with APIs | H | 8 hrs| 6 hrs | 0 hrs |
+| Get Components to Render Their Data | H | 6 hrs| 7.5 hrs | 0 hrs |
+| Style the Page | H | 10 hrs| 5 hrs | 0 hrs |
+| Setting Up the News Section | H | 6 hrs| 4 hrs | 0 hrs |
+| Total | H | 39 hrs| 29 hrs | 0 hrs |
 
 ## Project Schedule
 
@@ -132,7 +132,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |Jan 24th| Project Pitch / Project Approval | Complete
 |Jan 27th| Basic Structure with Working Logic and API Results | Complete
-|Jan 28th| Get All Components To Render Their Specified Data | Incomplete
+|Jan 28th| Get All Components To Render Their Specified Data | Complete
 |Jan 29th| Styling the Site  | Incomplete
 |Jan 30th| Final Touches | Incomplete
 |Jan 31tst| Present | Incomplete

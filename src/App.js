@@ -17,35 +17,41 @@ function App() {
   const [locationValue, setLocationValue] = useState('Nyc')
   const [value, setValue] = useState('Pizza')
 
-  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&term=${value}`
+  // All my API URLs
+  const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${locationValue}&sort_by=review_count&term=${value}`
+  const yelpLocationAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${locationValue}`
   const recipesAPI = `https://api.edamam.com/search?q=${value}&app_id=${process.env.REACT_APP_RECIPE_ID}&app_key=${process.env.REACT_APP_RECIPE_KEY}&from=0&to=10`
 
-  // The text from the search bar
+  // The text from Food search bar
   const handleChange = (e) => {
     let textInput = e.target.value
     let newValue = textInput.charAt(0).toUpperCase() + textInput.slice(1)
     setValue(newValue)
   }
 
+  // The text from Location search bar
   const handleLocationChange = (e) => {
-    setLocationValue(e.target.value)
+    let location = (e.target.value)
+    let newLocation = location.charAt(0).toUpperCase() + location.slice(1)
+    setLocationValue(newLocation)
   }
 
-  // When the search button is clicked this API call will run
+  // When the Food search button is clicked this will trigger API call to run
   const handleClick = (e) => {
     e.preventDefault()
     setUserSearched(value)
     handleRequest()
-    recipeResults()
+    //recipeResults()
   }
 
+  // When the Location search button is clicked this will trigger API call to run
   const handleLocationClick = (e) => {
     e.preventDefault()
     setUserLocation(locationValue)
+    handleLocationRequest()
   }
 
-  console.log(userLocation)
-
+  // Calling Yelp Food API 
   const handleRequest = async () => {
     const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
     let response = await axios.get(
@@ -55,6 +61,17 @@ function App() {
     setYelpResults(response.data.businesses)
   }
 
+  // Calling Yelp Location API
+  const handleLocationRequest = async () => {
+    const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
+    let response = await axios.get(
+      yelpLocationAPI,
+      config
+    )
+    setYelpResults(response.data.businesses)
+  }
+
+  // Calling Recipes API
   const recipeResults = async () => {
     let res = await axios.get(
       recipesAPI
@@ -62,6 +79,7 @@ function App() {
     setReseipeRes(res.data.hits)
   }
 
+  // These two functions will run once at startup 
   useEffect(() => {
     handleRequest()
     // recipeResults()
@@ -90,7 +108,7 @@ function App() {
         <Route
           exact
           path='/recipes'
-          component={() => <Recipes userSearched={userSearched} currentRecipes={receipeRes} recipeName={value} />}
+          component={() => <Recipes currentRecipes={receipeRes} recipeName={value} />}
         />
 
         <Footer />

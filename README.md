@@ -114,13 +114,13 @@ Timeframes are key in the development cycle. You have limited time to code and s
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create The Structure | H | 3 hrs| 5 hrs | 0 hrs |
-| Create the Logic and Initial State | H | 6 hrs| 7 hrs | 0 hrs |
+| Create The Structure | H | 3 hrs| 7 hrs | 0 hrs |
+| Create the Logic and Initial State | H | 6 hrs| 8 hrs | 0 hrs |
 | Interacting with APIs | H | 8 hrs| 6 hrs | 0 hrs |
-| Get Components to Render Their Data | H | 6 hrs| 7.5 hrs | 0 hrs |
-| Style the Page | H | 10 hrs| 5 hrs | 0 hrs |
+| Get Components to Render Their Data | H | 6 hrs| 8.5 hrs | 0 hrs |
+| Style the Page | H | 10 hrs| 7 hrs | 0 hrs |
 | Setting Up the News Section | H | 6 hrs| 4 hrs | 0 hrs |
-| Total | H | 39 hrs| 29 hrs | 0 hrs |
+| Total | H | 39 hrs| 36 hrs | 0 hrs |
 
 ## Project Schedule
 

@@ -6,7 +6,7 @@ function ButtonSidebar(props) {
         <div className="buttons-div">
 
             <div className="main-div-buttons">
-                <h3>Suggestions</h3>
+                <h3 className="sidebar-title">Suggestions</h3>
                 <button onClick={props.click} value='pizza' className='suggestions-button'> Pizza </button>
                 <button onClick={props.click} value='burger' className='suggestions-button'> Burger </button>
                 <button onClick={props.click} value='vegetarian' className='suggestions-button'> Vegetarian </button>

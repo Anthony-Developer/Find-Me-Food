@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Results from './Results'
-//import News from './News'
 import axios from 'axios'
-//import { Route, Link } from "react-router-dom";
 import ButtonSidebar from './ButtonSidebar';
 
 function Main(props) {
-    //console.log(props.name)
-
-    // Results for the API call passed down from App.js
+    const locationValue = (props.location)
     const yelpResults = (props.results)
     
-    const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nyc&sort_by=review_count&categories=food&term=$`
+    const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${locationValue}&sort_by=review_count&categories=food&term=$`
 
-    // The function for when my sidebar buttoins are clicked it'll render the category wthin my button
+    // The function for when my sidebar buttons are clicked it'll render the category wthin my button
     const handleClick = async (e) => {
         e.preventDefault()
         const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
@@ -23,21 +19,6 @@ function Main(props) {
         )
         props.changeResults(response.data.businesses)
     }
-
-    // The initial results to render to display once the app is opened
-    // const initialResults = async () => {
-    //     const config = { headers: { Authorization: `Bearer ${process.env.REACT_APP_YELP_KEY}`, 'Accept': 'application/json', 'Access-Control-Allow-Origin': '*' } }
-    //     let res = await axios.get(
-    //         `${yelpAPI}fish`,
-    //         config
-    //     )
-    //     props.changeResults(res.data.businesses)
-    // }
-
-    // Runs the first time the page is loaded
-    // useEffect(() => {
-    //     initialResults()
-    // }, [])
 
 
     return (

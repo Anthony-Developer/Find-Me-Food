@@ -13,14 +13,16 @@ function Results(props) {
         return (
 
           <div className="individual-results-div" key={ item.id }> 
-              <a href={ item.url } className="business-url"><h3> { item.name } </h3></a> 
-              <br></br>
-              <img className="results-img" src={ item.image_url } alt='' />
-              <p> Rating { item.rating } </p>
-              <p> Reviews { item.review_count } </p>
-              <p> { item.display_phone } </p>
-              <p>{ item.location.display_address[0] }</p>
-              <p>{ item.location.display_address[1] }</p> 
+              <h3 className="results-title"> { item.name } </h3>
+      
+                <a href={ item.url } className="business-url"><img className="results-img" src={item.image_url} alt='' /></a> 
+              <div className="results-info">
+                <p className="results-descripton"> Rating { item.rating } </p>
+                <p> Reviews { item.review_count } </p>
+                <p> { item.display_phone } </p>
+                <p> { item.location.display_address[0] } </p>
+                <p className="results-descripton"> { item.location.display_address[1] } </p> 
+              </div>
               
           </div>
       )
@@ -37,6 +39,6 @@ function Results(props) {
 
       </div>
     )
-  }
+}
   
   export default Results

@@ -95,7 +95,7 @@ function App() {
         <Route
           exact
           path='/'>
-          <Main results={yelpResults} changeResults={setYelpResults} name={value} />
+          <Main results={yelpResults} changeResults={setYelpResults} name={value} location={locationValue}/>
         </Route>
 
 

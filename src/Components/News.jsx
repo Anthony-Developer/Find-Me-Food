@@ -24,7 +24,7 @@ function News() {
         <div className="news-individual-divs" key={item.index}>
           <h1> {item.title} </h1>
           <p> By {item.author} </p>
-          <img src={item.urlToImage} className="news-img"/>
+          <img src={item.urlToImage} className="news-img" alt="images-news"/>
           <p> {item.description} </p>
           <br />
           <a href={item.url} alt='' className="news-links"> Link to article</a>
@@ -35,7 +35,7 @@ function News() {
       )
   })
 
-  //console.log(currentNews)
+  
 
     return (
       <div className="news-div">
@@ -46,6 +46,6 @@ function News() {
 
       </div>
     )
-  }
+}
   
   export default News

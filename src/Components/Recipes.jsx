@@ -7,7 +7,7 @@ function Recipes({ recipeName, currentRecipes }) {
         return (
             <div className="recipes-individual-divs" key={item.index}>
                 <h2 className="recipes-individual-title">{item.recipe.label}</h2>
-                <img src={item.recipe.image} className="recipes-img" />
+                <img src={item.recipe.image} className="recipes-img" alt="recipes-img"/>
                 <br />
                 <a href={item.recipe.url} className="recipes-links"> Link to recipe </a>
                 <br />

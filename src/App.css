@@ -35,7 +35,7 @@ nav {
 
 .change-food-location {
   display: flex;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .change-food-location-button {
@@ -58,13 +58,15 @@ nav {
 }
 
 .component-title {
-  text-decoration: underline;
+  color: #004445;
+  font-family: 'Baloo Bhai', cursive;
 }
 
 .footer {
   background-color:  #004445;
   color: #f8b400;
   padding: 15px;
+  font-family: 'Baloo Bhai', cursive;
 }
 
 .header-container {
@@ -80,6 +82,7 @@ nav {
 
 .header-title {
   background-color: #004445;
+  font-family: 'Baloo Bhai', cursive;
   color: #f8b400;
   padding: 10px;
   margin: 0;
@@ -119,13 +122,20 @@ nav {
   margin: 0;
 }
 
-.nav-links > a {
+.nav-links > * > button {
   text-decoration: none;
   color: white;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  outline: none;
 }
 
-.nav-links > a:hover {
+.nav-links > * > button:hover {
   color: #f8b400;
+  cursor: pointer;
 }
 
 .news-div {
@@ -140,6 +150,7 @@ nav {
 
 .news-img {
   max-width: 80%;
+  border-radius: 4%;
 }
 
 .news-individual-divs {
@@ -147,8 +158,31 @@ nav {
   margin: auto;
 }
 
-.news-links {
-  text-decoration: none;
+.news-individual-divs > p {
+  color: #004445;
+}
+
+.news-button {
+  height: 28px;
+  padding-left: 10px;
+  width: 120px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  font-size: 13px;
+  outline: none;
+}
+
+.news-button:hover {
+  background-color: red;
+  color: black;
+}
+
+.news-title {
+  color: #004445;
 }
 
 .recipes-individual-divs {
@@ -161,10 +195,17 @@ nav {
   text-align: center;
   margin: auto;
   padding: 10px 0px;
+  color: #004445;
 }
 
 .recipes-img {
   max-width: 80%;
+  border-radius: 5%;
+  transition: transform .2s;
+}
+
+.recipes-img:hover {
+  transform: scale(1.05);
 }
 
 .recipes-links {
@@ -174,6 +215,14 @@ nav {
 
 .recipes-div {
   justify-content: center;
+}
+
+.recipes-info {
+  background-color: #2c786c;
+  border-radius: 7%;
+  max-width: 95%;
+  margin: auto;
+  color: white;
 }
 
 .results-div {
@@ -219,7 +268,6 @@ nav {
 }
 
 .search-form-div {
-  padding-left: 15px;
   width: 100%;
   position: relative;
   display: flex;
@@ -244,6 +292,7 @@ nav {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 15px;
+  outline: none;
 }
 
 .sidebar-title {

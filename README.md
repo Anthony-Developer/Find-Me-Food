@@ -115,12 +115,12 @@ Timeframes are key in the development cycle. You have limited time to code and s
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Create The Structure | H | 3 hrs| 7 hrs | 0 hrs |
-| Create the Logic and Initial State | H | 6 hrs| 8 hrs | 0 hrs |
+| Create the Logic and Initial State | H | 6 hrs| 9.5 hrs | 0 hrs |
 | Interacting with APIs | H | 8 hrs| 6 hrs | 0 hrs |
 | Get Components to Render Their Data | H | 6 hrs| 8.5 hrs | 0 hrs |
-| Style the Page | H | 10 hrs| 7 hrs | 0 hrs |
+| Style the Page | H | 10 hrs| 12 hrs | 0 hrs |
 | Setting Up the News Section | H | 6 hrs| 4 hrs | 0 hrs |
-| Total | H | 39 hrs| 36 hrs | 0 hrs |
+| Total | H | 39 hrs| 42.5 hrs | 0 hrs |
 
 ## Project Schedule
 
@@ -133,7 +133,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Jan 24th| Project Pitch / Project Approval | Complete
 |Jan 27th| Basic Structure with Working Logic and API Results | Complete
 |Jan 28th| Get All Components To Render Their Specified Data | Complete
-|Jan 29th| Styling the Site  | Incomplete
+|Jan 29th| Styling the Site  | Complete
 |Jan 30th| Final Touches | Incomplete
 |Jan 31tst| Present | Incomplete
 

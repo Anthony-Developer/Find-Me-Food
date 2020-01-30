@@ -7,10 +7,20 @@ function Recipes({ recipeName, currentRecipes }) {
         return (
             <div className="recipes-individual-divs" key={item.index}>
                 <h2 className="recipes-individual-title">{item.recipe.label}</h2>
-                <img src={item.recipe.image} className="recipes-img" alt="recipes-img"/>
+                <a href={item.recipe.url} className="recipes-links"><img src={item.recipe.image} className="recipes-img" alt="recipes-img"/></a> 
                 <br />
-                <a href={item.recipe.url} className="recipes-links"> Link to recipe </a>
                 <br />
+                
+                <div className="recipes-info">
+                    <h4> Ingredients </h4>
+                    {item.recipe.ingredients.map((ingredients) => {
+                        return(
+                        <p className="results-descripton"> {ingredients.text} </p>
+                        )
+                    })}
+                
+                </div>
+
             </div>
         )
     })

@@ -16,6 +16,8 @@ function App() {
   const [userLocation, setUserLocation] = useState('')
   const [locationValue, setLocationValue] = useState('Nyc')
   const [value, setValue] = useState('Pizza')
+  const [news, setNews] = useState(false)
+  const [recipeState, setRecipeState] = useState(true)
 
   // All my API URLs
   const yelpAPI = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${locationValue}&sort_by=review_count&term=${value}`
@@ -79,10 +81,26 @@ function App() {
     setReseipeRes(res.data.hits)
   }
 
+  const changeNewsState = (e) => {
+    setNews(true)
+  }
+
+  const changeNewsStateFalse = (e) => {
+    setNews(false)
+  }
+
+  const hideRecipeButton = (e) => {
+    setRecipeState(false)
+  }
+
+  const showRecipeButton = (e) => {
+    setRecipeState(true)
+  }
+
   // These two functions will run once at startup 
   useEffect(() => {
     handleRequest()
-    // recipeResults()
+    //recipeResults()
   }, [])
 
   return (
@@ -90,7 +108,7 @@ function App() {
     <Router>
       <div className="App">
 
-        <Header value={value} textInput={handleChange} location={handleLocationChange} buttonClick={handleClick} buttonLocationClick={handleLocationClick}/>
+        <Header value={value} recipeState={recipeState} showRecipeButton={showRecipeButton} hideRecipeButton={hideRecipeButton}  news={news} showSearch={changeNewsStateFalse} hideSearch={changeNewsState} textInput={handleChange} location={handleLocationChange} buttonClick={handleClick} buttonLocationClick={handleLocationClick}/>
 
         <Route
           exact
@@ -102,7 +120,7 @@ function App() {
 
         <Route
           path='/news'
-          component={() => <News />}
+          component={() => <News  />}
         />
 
         <Route

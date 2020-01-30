@@ -7,6 +7,16 @@ function Header(props) {
   const buttonClick = (props.buttonClick)
   const locationChange = (props.location)
   const buttonLocationClick = (props.buttonLocationClick)
+  const hideSearch = (props.hideSearch)
+  const showSearch = (props.showSearch)
+
+  let renderSearch
+  
+    if (props.news === false) {
+      renderSearch = <Search textInput={textInput} buttonClick={buttonClick} locationChange={locationChange} buttonLocationClick={buttonLocationClick}/>
+    }
+  
+  
 
     return (
       <div className="header-container">
@@ -14,8 +24,8 @@ function Header(props) {
         <h1 className="header-title"> Find me Food! </h1>
         
         <div className="header-elements">
-            <Search textInput={textInput} buttonClick={buttonClick} locationChange={locationChange} buttonLocationClick={buttonLocationClick}/>
-            <Nav />
+            {renderSearch}
+            <Nav hideSearch={hideSearch} showSearch={showSearch}/>
         </div>
 
       </div>

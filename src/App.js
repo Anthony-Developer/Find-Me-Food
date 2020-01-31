@@ -42,7 +42,7 @@ function App() {
     e.preventDefault()
     setUserSearched(value)
     handleRequest()
-    //recipeResults()
+    recipeResults()
   }
 
   // When the Location search button is clicked this will trigger API call to run

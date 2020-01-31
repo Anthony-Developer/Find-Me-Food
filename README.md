@@ -118,9 +118,9 @@ Timeframes are key in the development cycle. You have limited time to code and s
 | Create the Logic and Initial State | H | 6 hrs| 9.5 hrs | 0 hrs |
 | Interacting with APIs | H | 8 hrs| 6 hrs | 0 hrs |
 | Get Components to Render Their Data | H | 6 hrs| 8.5 hrs | 0 hrs |
-| Style the Page | H | 10 hrs| 16 hrs | 0 hrs |
+| Style the Page | H | 10 hrs| 18 hrs | 0 hrs |
 | Setting Up the News Section | H | 6 hrs| 4 hrs | 0 hrs |
-| Total | H | 39 hrs| 46.5 hrs | 0 hrs |
+| Total | H | 39 hrs| 48.5 hrs | 0 hrs |
 
 ## Project Schedule
 
@@ -134,7 +134,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Jan 27th| Basic Structure with Working Logic and API Results | Complete
 |Jan 28th| Get All Components To Render Their Specified Data | Complete
 |Jan 29th| Styling the Site  | Complete
-|Jan 30th| Final Touches | Incomplete
+|Jan 30th| Final Touches | Complete
 |Jan 31tst| Present | Incomplete
 
 ## Additional Libraries
@@ -155,7 +155,34 @@ Use this section to include a brief code snippet you are proud of, along with a 
 
 ```
 function reverse(string) {
-	// here is the code to reverse a string of text
+	// Will alternate between the "Search for food" or "Change Location"
+    if (food === true) {
+      foodOrLocation = (
+          <div className="change-food-location">
+            <form action="" className="search-form-div">
+              <input type="text" placeholder=' Search for Food' onChange={props.textInput} value={props.value} className="search-box" />
+              <button onClick={props.buttonClick} className="search-button"> Search </button>
+            </form>
+
+            <div className="change-food-location">
+              <button onClick={() => setFood(!food)} className="change-food-location-button"> Change Location </button>
+            </div>
+          </div>
+      )
+    } else {
+      return (
+          <div className="change-food-location">
+            <form action="" className="search-form-div">
+              <input type="text" placeholder=' Change Location' onChange={props.locationChange} className="search-box" />
+              <button onClick={props.buttonLocationClick} className="search-button"> Search </button>
+            </form>
+
+            <div className="change-food-location">
+              <button onClick={() => setFood(!food)} className="change-food-location-button"> Food Search </button>
+            </div>
+          </div>
+      )
+    }
 }
 ```
 

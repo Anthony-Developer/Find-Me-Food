@@ -28,7 +28,7 @@ function Search(props) {
             </form>
 
             <div className="change-food-location">
-              <button onClick={() => setFood(!food)} className="change-food-location-button"> Search for Food </button>
+              <button onClick={() => setFood(!food)} className="change-food-location-button"> Food Search </button>
             </div>
           </div>
       )

@@ -68,6 +68,21 @@ nav {
   font-family: 'Baloo Bhai', cursive;
 }
 
+.footer-icons {
+  width: 4rem;
+  margin: 0rem 1rem;
+  transition: transform .2s;
+}
+
+.footer-icons:hover {
+  color: #f8b400;
+  transform: scale(1.2);
+}
+
+.footer-text {
+  margin: 0;
+}
+
 .header-container {
   background-color: #004445;
   margin: 0;

@@ -154,7 +154,6 @@ Use this section to list of all major issues you anticipate encountering during 
 Use this section to include a brief code snippet you are proud of, along with a brief description of why.
 
 ```
-function reverse(string) {
 	// Will alternate between the "Search for food" or "Change Location"
     if (food === true) {
       foodOrLocation = (
@@ -183,7 +182,6 @@ function reverse(string) {
           </div>
       )
     }
-}
 ```
 
 ## Change Log

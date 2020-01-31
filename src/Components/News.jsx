@@ -7,8 +7,6 @@ function News(props) {
   
   const newsAPI = `https://newsapi.org/v2/everything?q=food&apiKey=${process.env.REACT_APP_NEWS_KEY}`
 
-  const hideNews = (props.hideSearch)
-
   const newsResults = async () => {
     let res = await axios.get(
       newsAPI

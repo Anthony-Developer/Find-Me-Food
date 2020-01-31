@@ -16,6 +16,7 @@ function Results(props) {
               <h3 className="results-title"> { item.name } </h3>
       
                 <a href={ item.url } className="business-url"><img className="results-img" src={item.image_url} alt='' /></a> 
+              
               <div className="results-info">
                 <p className="results-descripton"> Rating { item.rating } </p>
                 <p> Reviews { item.review_count } </p>

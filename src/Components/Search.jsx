@@ -34,9 +34,6 @@ function Search(props) {
       )
     }
 
-    
-  
-  
 
   return (
     <div className="search-component">

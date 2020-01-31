@@ -4,6 +4,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+p {
+  font-size: 1rem;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -12,11 +16,6 @@ nav {
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .business-url {
@@ -35,20 +34,20 @@ nav {
 
 .change-food-location {
   display: flex;
-  padding-left: 5px;
+  padding-left: 0.3125rem;
 }
 
 .change-food-location-button {
-  height: 28px;
-  padding-left: 10px;
-  width: 90px;
-  border: 1px solid black;
+  height: 1.75rem;
+  padding-left: 0.625rem;
+  width: 5.625rem;
+  border: 0.0625rem solid black;
   background: black;
   text-align: center;
   color: #fff;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 0.625rem;
   outline: none;
 }
 
@@ -65,26 +64,27 @@ nav {
 .footer {
   background-color:  #004445;
   color: #f8b400;
-  padding: 15px;
+  padding: 0.9375rem;
   font-family: 'Baloo Bhai', cursive;
 }
 
 .header-container {
   background-color: #004445;
   margin: 0;
+  width: 100%;
 }
 
 .header-elements {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .header-title {
   background-color: #004445;
   font-family: 'Baloo Bhai', cursive;
   color: #f8b400;
-  padding: 10px;
+  padding: 0.625rem;
   margin: 0;
 }
 
@@ -94,7 +94,7 @@ nav {
 }
 
 .links {
-  margin: 10px;
+  margin: 0.625rem;
   color: black;
   text-decoration: none;
 }
@@ -129,7 +129,7 @@ nav {
   border: none;
   background: none;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   outline: none;
 }
 
@@ -163,16 +163,16 @@ nav {
 }
 
 .news-button {
-  height: 28px;
-  padding-left: 10px;
-  width: 120px;
-  border: 1px solid black;
+  height: 1.75rem;
+  padding-left: 0.625rem;
+  width: 7.5rem;
+  border: 0.0625rem solid black;
   background: black;
   text-align: center;
   color: #fff;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.8125rem;
   outline: none;
 }
 
@@ -187,14 +187,14 @@ nav {
 
 .recipes-individual-divs {
   max-width: 20%;
-  padding: 10px 0px 10px 0px;
+  padding: 0.625rem 0rem;
 }
 
 .recipes-individual-title {
   max-width: 80%;
   text-align: center;
   margin: auto;
-  padding: 10px 0px;
+  padding: 0.625rem 0rem;
   color: #004445;
 }
 
@@ -210,7 +210,7 @@ nav {
 
 .recipes-links {
   text-decoration: none;
-  padding: 10px 0px;
+  padding: 0.625rem 0rem;
 }
 
 .recipes-div {
@@ -253,7 +253,7 @@ nav {
 }
 
 .results-descripton {
-  padding: 5px 0px;
+  padding: 0.3125rem 0rem;
 }
 
 .recipes-to-display {
@@ -275,23 +275,23 @@ nav {
 
 .search-box {
   width: 100%;
-  border: 1px solid black;
+  border: 0.0625rem solid black;
   border-right: none;
-  padding: 5px;
-  border-radius: 5px 0 0 5px;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem 0rem 0rem 0.3125rem;
   outline: none;
 }
 
 .search-button {
-  width: 80px;
-  height: 28px;
-  border: 1px solid black;
+  width: 5rem;
+  height: 1.75rem;
+  border: 0.0625rem solid black;
   background: black;
   text-align: center;
   color: #fff;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 0.3125rem 0.3125rem 0;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.9375rem;
   outline: none;
 }
 
@@ -299,15 +299,16 @@ nav {
   color: white;
   max-width: 80%;
   margin: auto;
-  padding: 15px 0px;
+  font-size: 1.3rem;
+  padding: 0.9375rem 0rem;
 }
 
 .suggestions-button {
   display: block;
   margin: auto;
-  padding: 10px;
+  padding: 0.625rem;
   width: 100%;
-  font-size: 18px;
+  font-size: 1.125rem;
   background-color: black;
   color: white;
   border: none;
@@ -321,32 +322,69 @@ nav {
 }
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 480px) {
+  .buttons-sidebar {
+    display: none;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .change-food-location-button {
+    max-width: 3.5rem;
+    width: 3.5rem;
+    font-size: 0.1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-button {
+    max-width: 2rem;
+    width: 2rem;
+    font-size: 0rem;
+  } 
+
+  .search-form-div {
+    width: 15rem;
+    max-width: 15rem;
   }
+
+  .search-component {
+    max-width: 30%;
+  }
+
+  .change-food-location {
+    max-width: 30%;
+  }
+
+  .search-box {
+    max-width: 4.5rem;
+    width: 4.5rem;
+    font-size: 0.4rem;
+  }
+
+  .nav-links {
+    padding-right: 2rem;
+  }
+
+  .nav-links > * > button {
+    font-size: 0.6rem;
+    padding: 0.3rem;
+  }
+
+  .individual-results-div > * > p {
+    font-size: 0.5rem;
+  }
+
+  .individual-results-div > h3 {
+    font-size: 0.7rem;
+  }
+
+  .recipes-individual-divs > * > p, h4 {
+    font-size: 0.5rem;
+  }
+
+  .recipes-individual-divs > h2 {
+    font-size: 0.7rem;
+  }
+
+  .recipes-div > h1 {
+    font-size: 0.9rem;
+  }
+
 }

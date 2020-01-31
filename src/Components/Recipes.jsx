@@ -8,8 +8,8 @@ function Recipes({ recipeName, currentRecipes }) {
             <div className="recipes-individual-divs" key={item.index}>
                 <h2 className="recipes-individual-title">{item.recipe.label}</h2>
                 <a href={item.recipe.url} className="recipes-links"><img src={item.recipe.image} className="recipes-img" alt="recipes-img"/></a> 
-                <br />
-                <br />
+                    <br />
+                    <br />
                 
                 <div className="recipes-info">
                     <h4> Ingredients </h4>
